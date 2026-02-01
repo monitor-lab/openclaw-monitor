@@ -1,0 +1,17 @@
+# OpenClaw Monitor Configuration Example
+
+monitor:
+  interval: 5  # Monitoring interval in seconds
+  metrics:
+    - cpu
+    - memory
+    - disk
+
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  file: openclaw-monitor.log
+
+thresholds:
+  cpu_percent: 80.0
+  memory_percent: 80.0
+  disk_percent: 90.0
