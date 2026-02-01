@@ -4,6 +4,7 @@ Configuration management for OpenClaw Monitor.
 
 import os
 import yaml
+import copy
 from typing import Dict, Any, Optional
 
 
@@ -33,7 +34,7 @@ class Config:
         Args:
             config_path: Path to configuration file (YAML)
         """
-        self.config = self.DEFAULT_CONFIG.copy()
+        self.config = copy.deepcopy(self.DEFAULT_CONFIG)
         
         if config_path and os.path.exists(config_path):
             self.load_from_file(config_path)
